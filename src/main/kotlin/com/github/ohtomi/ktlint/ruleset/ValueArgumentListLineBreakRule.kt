@@ -11,9 +11,9 @@ class ValueArgumentListLineBreakRule : Rule("value-argument-list-line-break") {
     private val errorMessage = "should line break"
 
     override fun visit(
-            node: ASTNode,
-            autoCorrect: Boolean,
-            emit: (offset: Int, errorMessage: String, canBeAutoCorrected: Boolean) -> Unit
+        node: ASTNode,
+        autoCorrect: Boolean,
+        emit: (offset: Int, errorMessage: String, canBeAutoCorrected: Boolean) -> Unit
     ) {
         if (node.elementType == KtNodeTypes.VALUE_ARGUMENT_LIST) {
             val isError = node.children().any { child ->
@@ -22,7 +22,9 @@ class ValueArgumentListLineBreakRule : Rule("value-argument-list-line-break") {
                         !child.treeNext.text.contains("\n")
             }
             if (isError) {
-                emit(node.startOffset, errorMessage, false)
+                emit(node.startOffset,
+                        errorMessage,
+                        false)
             }
         }
     }

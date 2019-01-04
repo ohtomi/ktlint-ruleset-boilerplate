@@ -22,7 +22,10 @@ class ValueArgumentListLineBreakRuleTest : Spek({
 
         it("should line break") {
             Assertions.assertThat(rule.lint(code)).isEqualTo(listOf(
-                    LintError(5, 7, "value-argument-list-line-break", "should line break")
+                    LintError(5,
+                            7,
+                            "value-argument-list-line-break",
+                            "should line break")
             ))
         }
     }
