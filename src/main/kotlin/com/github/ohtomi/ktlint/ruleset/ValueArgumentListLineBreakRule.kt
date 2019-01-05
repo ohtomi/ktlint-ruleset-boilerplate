@@ -18,13 +18,13 @@ class ValueArgumentListLineBreakRule : Rule("value-argument-list-line-break") {
         if (node.elementType == KtNodeTypes.VALUE_ARGUMENT_LIST) {
             val isError = node.children().any { child ->
                 child.elementType == KtTokens.COMMA &&
-                        child.treeNext.elementType == KtTokens.WHITE_SPACE &&
-                        !child.treeNext.text.contains("\n")
+                    child.treeNext.elementType == KtTokens.WHITE_SPACE &&
+                    !child.treeNext.text.contains("\n")
             }
             if (isError) {
                 emit(node.startOffset,
-                        errorMessage,
-                        false)
+                    errorMessage,
+                    false)
             }
         }
     }
