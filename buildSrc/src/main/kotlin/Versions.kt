@@ -23,7 +23,7 @@ object Versions {
 
     const val org_ajoberstar_reckon_gradle_plugin: String = "0.9.0" 
 
-    const val assertj_core: String = "3.5.2"
+    const val assertj_core: String = "3.11.1" 
 
     const val org_jetbrains_dokka_gradle_plugin: String = "0.9.17" 
 
