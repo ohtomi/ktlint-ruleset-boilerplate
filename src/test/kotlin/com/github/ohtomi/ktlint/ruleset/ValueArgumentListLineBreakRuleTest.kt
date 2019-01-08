@@ -23,4 +23,20 @@ class ValueArgumentListLineBreakRuleTest {
             LintError(5, 7, "value-argument-list-line-break", "should line break")
         ))
     }
+
+    @Test
+    fun testHasNoProblem() {
+        val rule = ValueArgumentListLineBreakRule()
+        val code = """
+            fun fn(a: String, b: String): String = a + b
+            val a = "a"
+            val b = "b"
+            fun example() {
+                fn(a,
+                b)
+            }
+        """.trimIndent()
+
+        Assertions.assertThat(rule.lint(code)).isEqualTo(emptyList<LintError>())
+    }
 }
