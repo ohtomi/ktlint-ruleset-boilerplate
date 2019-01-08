@@ -31,10 +31,6 @@ object Versions {
 
     const val org_jetbrains_kotlin: String = "1.3.11" 
 
-    const val spek_junit_platform_engine: String = "1.1.5"
-
-    const val junit_platform_gradle_plugin: String = "1.0.0"
-
     const val propdeps_plugin: String = "0.0.7" 
 
     /**

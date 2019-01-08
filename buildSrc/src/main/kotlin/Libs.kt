@@ -77,16 +77,6 @@ object Libs {
     const val kotlin_test: String =
             "org.jetbrains.kotlin:kotlin-test:" + Versions.org_jetbrains_kotlin
 
-    /**
-     * [spek-junit-platform-engine website](https://jetbrains.github.io/spek) */
-    const val spek_junit_platform_engine: String =
-            "org.jetbrains.spek:spek-junit-platform-engine:" + Versions.spek_junit_platform_engine
-
-    /**
-     * [junit-platform-gradle-plugin website](http://junit.org/junit5/) */
-    const val junit_platform_gradle_plugin: String =
-            "org.junit.platform:junit-platform-gradle-plugin:" + Versions.junit_platform_gradle_plugin
-
     const val propdeps_plugin: String =
             "org.springframework.build.gradle:propdeps-plugin:" + Versions.propdeps_plugin
 }
