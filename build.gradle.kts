@@ -4,19 +4,16 @@ import org.jetbrains.dokka.gradle.DokkaTask
 
 buildscript {
     repositories {
-        mavenCentral()
         maven { url = uri("http://repo.spring.io/plugins-release") }
     }
     dependencies {
         classpath(Libs.propdeps_plugin)
-        classpath(Libs.junit_platform_gradle_plugin)
     }
 }
 
 apply {
     plugin("propdeps")
     plugin("propdeps-maven")
-    plugin("org.junit.platform.gradle.plugin")
 }
 
 plugins {
@@ -35,21 +32,16 @@ repositories {
 }
 
 val ktlint by configurations.creating
-val provided by configurations.existing
 
 dependencies {
     implementation(Libs.kotlin_stdlib_jdk8)
-    provided.get()(Libs.ktlint_core)
+    add("provided", Libs.ktlint_core)
 
     testImplementation(Libs.kotlin_test)
     testImplementation(Libs.kotlin_test_junit)
     testCompile(Libs.assertj_core)
     testCompile(Libs.ktlint_test)
     testCompile(Libs.kotlin_reflect)
-    testCompile(Libs.spek_junit_platform_engine) {
-        exclude("org.jetbrains.kotlin", "kotlin-stdlib")
-        exclude("org.jetbrains.kotlin", "kotlin-reflect")
-    }
 
     ktlint(Libs.ktlint)
     detektPlugins(Libs.detekt_formatting)
