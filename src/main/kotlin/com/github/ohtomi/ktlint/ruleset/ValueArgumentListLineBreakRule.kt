@@ -22,9 +22,7 @@ class ValueArgumentListLineBreakRule : Rule("value-argument-list-line-break") {
                     !child.treeNext.text.contains("\n")
             }
             if (isError) {
-                emit(node.startOffset,
-                    errorMessage,
-                    false)
+                emit(node.startOffset, errorMessage, false)
             }
         }
     }
